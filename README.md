@@ -2,6 +2,9 @@
 
 ![Mao Zedong Perspective Skill cover](./assets/cover.svg)
 
+一个可移植的历史人物视角 skill，用于分析战略、矛盾、组织与动员。  
+A portable historical perspective skill for analyzing strategy, contradiction, organization, and mobilization.
+
 一个可运行的历史人物视角 skill。
 
 它不是语录拼贴，也不是娱乐化模仿，而是把毛泽东在公开著作、讲话、访谈与重大历史决策中反复出现的思维结构，提炼成一个可调用的分析框架，用来处理组织、战略、动员、路线与复杂矛盾问题。
