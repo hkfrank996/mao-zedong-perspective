@@ -8,6 +8,7 @@
 你是来问：如果按这套思维方式拆局，他第一步看什么，第二步抓什么，第三步怎么组织行动。
 
 - [效果示例](#效果示例)
+- [支持哪些 Agent](#支持哪些-agent)
 - [快速安装](#快速安装)
 - [这个 skill 到底提炼了什么](#这个-skill-到底提炼了什么)
 - [它适合解决什么问题](#它适合解决什么问题)
@@ -166,6 +167,34 @@
 
 一个不告诉你自己局限在哪的历史人物 skill，不值得信任。
 
+## 支持哪些 Agent
+
+这个仓库现在不只面向 Codex。
+
+它采用的是 `SKILL.md + 技能目录` 这种可移植包装，因此可以用于多种支持 skill / agent instructions / AgentSkills 风格目录的 agent 系统。
+
+当前重点说明以下几类：
+
+| Agent | 当前支持方式 | 推荐安装位置 |
+|---|---|---|
+| Codex | 直接支持 | `~/.codex/skills/mao-zedong-perspective/` |
+| Claude Code | 直接支持 | `~/.claude/skills/mao-zedong-perspective/` 或项目 `.claude/skills/` |
+| OpenCode | 直接支持 | `~/.config/opencode/skills/`、项目 `.opencode/skills/`、`.claude/skills/` 或 `.agents/skills/` |
+| OpenClaw | 直接支持 | `~/.agents/skills/`、`~/.openclaw/skills/`、项目 `skills/` 或 `.agents/skills/` |
+| Hermes | 手动安装支持 | `~/.hermes/skills/` 下的自定义目录 |
+
+为什么现在可以这样说：
+
+- 这个仓库的核心交付物是标准 skill 目录，而不是依赖某个单独平台的私有插件格式
+- `SKILL.md` 的 frontmatter 已整理成更通用的单行写法，降低了不同 agent 解析差异带来的兼容风险
+- 对于更偏 AgentSkills 风格的系统，这个仓库可以按“复制整个 skill 目录”的方式落地
+
+需要说明的边界：
+
+- 不同 agent 的触发词、自动发现机制、索引时机可能不同
+- 有些 agent 会自动加载，有些需要重启或重新索引
+- Hermes 生态更偏自己的 skills 体系，所以这里给的是手动安装法，而不是宣称已经上架某个 Hermes 官方 registry
+
 ## 快速安装
 
 ### 方式一：直接复制到本地 skill 目录
@@ -193,6 +222,97 @@ python "$env:CODEX_HOME\skills\.system\skill-installer\scripts\install-skill-fro
 更详细的安装说明见：
 
 - [.codex/INSTALL.md](./.codex/INSTALL.md)
+
+## 多 Agent 安装方法
+
+### 1. Codex
+
+复制整个仓库目录到：
+
+```text
+C:\Users\<你的用户名>\.codex\skills\mao-zedong-perspective
+```
+
+然后重启 Codex。
+
+### 2. Claude Code
+
+放到全局 skills 目录：
+
+```text
+C:\Users\<你的用户名>\.claude\skills\mao-zedong-perspective
+```
+
+或者放到项目级目录：
+
+```text
+<你的项目>\.claude\skills\mao-zedong-perspective
+```
+
+之后重启 Claude Code，或在新会话中使用。
+
+### 3. OpenCode
+
+OpenCode 会识别多个兼容技能目录。你可以任选其一：
+
+```text
+C:\Users\<你的用户名>\.config\opencode\skills\mao-zedong-perspective
+```
+
+或项目内：
+
+```text
+<你的项目>\.opencode\skills\mao-zedong-perspective
+<你的项目>\.claude\skills\mao-zedong-perspective
+<你的项目>\.agents\skills\mao-zedong-perspective
+```
+
+重启 OpenCode 或重新进入会话后即可调用。
+
+### 4. OpenClaw
+
+OpenClaw 支持多种技能搜索路径。推荐全局路径：
+
+```text
+C:\Users\<你的用户名>\.agents\skills\mao-zedong-perspective
+```
+
+也可以使用：
+
+```text
+C:\Users\<你的用户名>\.openclaw\skills\mao-zedong-perspective
+<你的项目>\skills\mao-zedong-perspective
+<你的项目>\.agents\skills\mao-zedong-perspective
+```
+
+复制完成后，重新启动或重新加载对应 agent 会话。
+
+### 5. Hermes
+
+Hermes 更推荐自己的 skills 目录。手动安装时，可以放到：
+
+```text
+C:\Users\<你的用户名>\.hermes\skills\custom\mao-zedong-perspective
+```
+
+如果你习惯按分类管理，也可以把 `custom` 换成你自己的分类名。
+
+安装后重启 Hermes，或重新进入新会话。
+
+### 6. 通用检查
+
+无论你装到哪个 agent，最低检查都一样：
+
+1. 目标目录里要有 `SKILL.md`
+2. 不要只复制单个文件，要复制整个 skill 文件夹
+3. 安装后最好重启 agent 或新建会话
+4. 先用一句明确触发词测试
+
+例如：
+
+```text
+用毛泽东的视角分析这个组织问题
+```
 
 ## 如何使用
 
