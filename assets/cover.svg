@@ -1,0 +1,14 @@
+<svg width="1280" height="640" viewBox="0 0 1280 640" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1280" height="640" fill="#F4E9D8"/>
+  <rect x="56" y="56" width="1168" height="528" rx="28" fill="#E8D5B7"/>
+  <rect x="88" y="88" width="1104" height="464" rx="22" fill="#FAF3E7"/>
+  <line x1="160" y1="190" x2="1120" y2="190" stroke="#9E2A1F" stroke-width="6"/>
+  <line x1="160" y1="450" x2="1120" y2="450" stroke="#9E2A1F" stroke-width="6"/>
+  <text x="160" y="275" fill="#211915" font-family="Georgia, 'Times New Roman', serif" font-size="72" font-weight="700">Mao Zedong</text>
+  <text x="160" y="352" fill="#211915" font-family="Georgia, 'Times New Roman', serif" font-size="72" font-weight="700">Perspective Skill</text>
+  <text x="160" y="410" fill="#9E2A1F" font-family="'Trebuchet MS', Arial, sans-serif" font-size="28" font-weight="700">strategy / contradiction / organization / mobilization</text>
+  <text x="160" y="506" fill="#46362D" font-family="'Trebuchet MS', Arial, sans-serif" font-size="28">A portable skill for Codex, Claude Code, OpenClaw, OpenCode, and Hermes</text>
+  <circle cx="1048" cy="318" r="88" fill="#9E2A1F" opacity="0.14"/>
+  <circle cx="1048" cy="318" r="62" fill="#9E2A1F" opacity="0.24"/>
+  <circle cx="1048" cy="318" r="36" fill="#9E2A1F" opacity="0.34"/>
+</svg>
