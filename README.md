@@ -10,6 +10,7 @@
 - [效果示例](#效果示例)
 - [支持哪些 Agent](#支持哪些-agent)
 - [快速安装](#快速安装)
+- [各 Agent 最小触发示例](#各-agent-最小触发示例)
 - [这个 skill 到底提炼了什么](#这个-skill-到底提炼了什么)
 - [它适合解决什么问题](#它适合解决什么问题)
 - [和-qiushi-skill-有什么区别](#和-qiushi-skill-有什么区别)
@@ -313,6 +314,57 @@ C:\Users\<你的用户名>\.hermes\skills\custom\mao-zedong-perspective
 ```text
 用毛泽东的视角分析这个组织问题
 ```
+
+## 各 Agent 最小触发示例
+
+不同 agent 的加载机制不完全一样，但最小测试思路是一致的：新建会话，直接说一句足够明确的触发语。
+
+### Codex
+
+```text
+用毛泽东的视角分析这个组织问题
+```
+
+### Claude Code
+
+```text
+切换到毛泽东，帮我判断这里的主要矛盾
+```
+
+### OpenCode
+
+```text
+用毛泽东模式看这个项目，该先抓什么
+```
+
+### OpenClaw
+
+```text
+如果毛泽东来做这个增长方案，他会先抓什么
+```
+
+### Hermes
+
+```text
+用毛泽东的思维框架，而不是模仿语气，帮我拆这个局
+```
+
+### 通用备用触发词
+
+如果某个 agent 对中文触发不够敏感，也可以试这些更直接的说法：
+
+- `Use Mao Zedong perspective to analyze this organization problem.`
+- `Switch to Mao Zedong perspective.`
+- `Analyze the principal contradiction in this situation from Mao Zedong's perspective.`
+
+### 触发失败时先查什么
+
+如果你说了触发语但没有生效，先检查这四项：
+
+1. `SKILL.md` 是否在最终目录下
+2. 是否复制了整个 skill 目录，而不是只复制单个文件
+3. agent 是否已经重启，或是否开启了新会话
+4. 你放的目录是否真的是该 agent 会扫描的 skills 目录
 
 ## 如何使用
 

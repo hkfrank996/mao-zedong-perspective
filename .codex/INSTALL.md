@@ -162,7 +162,39 @@ python "$env:CODEX_HOME\skills\.system\skill-installer\scripts\install-skill-fro
 切换到毛泽东，帮我判断这里的主要矛盾
 ```
 
-## 8. 常见问题
+## 8. 各 Agent 最小测试句
+
+### Codex
+
+```text
+用毛泽东的视角分析这个组织问题
+```
+
+### Claude Code
+
+```text
+切换到毛泽东，帮我判断这里的主要矛盾
+```
+
+### OpenCode
+
+```text
+用毛泽东模式看这个项目，该先抓什么
+```
+
+### OpenClaw
+
+```text
+如果毛泽东来做这个增长方案，他会先抓什么
+```
+
+### Hermes
+
+```text
+用毛泽东的思维框架，而不是模仿语气，帮我拆这个局
+```
+
+## 9. 常见问题
 
 ### 1. 为什么复制后没生效
 
